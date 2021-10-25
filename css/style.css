@@ -67,6 +67,7 @@
   align-items: center;
   justify-content: center;
   height: 95vh;
+  overflow: hidden;
 }
 
 /* ######################################### HOLO ######################################### */
@@ -217,7 +218,6 @@
 .aboutSection {
   display: flex;
   align-items: center;
-  /* flex-wrap: wrap; */
   width: 100%;
 }
 
@@ -233,13 +233,202 @@
 .aboutTxt {
   margin: 0 2%;
   text-align: justify;
-  /* max-width: 800px;
-  max-height: 700px;
-  overflow-y: scroll; */
 }
 
 .aboutTxt h1 {
   margin: 2%;
+}
+
+/* ######################################### SKILLS SECTION ######################################### */
+.skillsSection {
+  border-radius: 20px;
+  width: 90%;
+  height: 90%;
+  margin-left: 5vw;
+  text-align: center;
+}
+
+.skillsSection h1 {
+  font-size: 2em;
+  margin-bottom: 1%;
+}
+
+.skillsSection h2 {
+  font-size: 1em;
+  margin: 1% 0;
+}
+
+/* FRONT SECTION */
+
+.frontSection {
+  display: flex;
+}
+
+/* FRONT SKILL BAR */
+
+.skillBarsSection {
+  height: 100%;
+  width: 50%;
+}
+
+.skillBarsGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.skillGroup {
+  margin: 1%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* PROGRESS BARS */
+
+.progress {
+  background: rgba(255, 255, 255, 0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  padding: 0 5px;
+  display: flex;
+  height: 30px;
+  width: 500px;
+}
+
+.progress-value {
+  border-radius: 100px;
+  height: 30px;
+  width: 0;
+}
+
+.pv-html {
+  animation: load-html 3s normal forwards;
+  background: #e76017;
+  box-shadow: 0 10px 40px -10px #e76017;
+}
+
+@keyframes load-html {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+.pv-css {
+  animation: load-css 3s normal forwards;
+  background: #3bb2e0;
+  box-shadow: 0 10px 40px -10px #3bb2e0;
+}
+
+@keyframes load-css {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+.pv-js {
+  animation: load-js 3s normal forwards;
+  background: #f1d223;
+  box-shadow: 0 10px 40px -10px #f1d223;
+}
+
+@keyframes load-js {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+.pv-php {
+  animation: load-php 3s normal forwards;
+  background: #838cb4;
+  box-shadow: 0 10px 40px -10px #838cb4;
+}
+
+@keyframes load-php {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+
+.pv-mysql {
+  animation: load-mysql 3s normal forwards;
+  background: #007777;
+  box-shadow: 0 10px 40px -10px #007777;
+}
+
+@keyframes load-mysql {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+
+/* DEV TOOLS SECTION */
+
+.toolsGroup {
+  height: 100%;
+  width: 50%;
+}
+
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.toolElement img {
+  height: 100px;
+  margin: 10%;
+}
+
+/* RESPONSIVE SKILL PAGE */
+
+@media (max-width: 1026px) {
+  .frontSection {
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+    overflow-y: scroll;
+  }
+
+  .skillBarsSection {
+    width: 100%;
+  }
+
+  .toolsGroup {
+    width: 100%;
+  }
+
+  .toolElement img {
+    height: 50px;
+    margin: 5%;
+  }
+
+  .skillsSection h1 {
+    font-size: 2em;
+  }
+
+  .skillsSection h2 {
+    font-size: 1em;
+  }
 }
 
 /* ######################################### FOOTER ######################################### */
