@@ -1,0 +1,263 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fullBody {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../img/samuraiBg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.glow {
+  position: fixed;
+  top: 11%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 60px 30px #fff;
+  border-radius: 50%;
+  transition: 7s;
+}
+
+/* ######################################### HEADER ######################################### */
+
+.navList {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.redNeon {
+  list-style: none;
+  animation: redNeon 1.5s ease-in-out infinite alternate;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 1%;
+  cursor: pointer;
+}
+
+.redNeon a {
+  text-decoration: none;
+  color: floralwhite;
+}
+
+@keyframes redNeon {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
+      0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
+      0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+  }
+}
+
+/* ######################################### CONTAINER ######################################### */
+
+.containerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+}
+
+/* ######################################### HOLO ######################################### */
+
+.card {
+  position: relative;
+  -webkit-animation: float 1.5s infinite alternate;
+  animation: float 1.5s infinite alternate;
+  border-radius: 20px;
+  width: 80vw;
+  height: 75vh;
+  color: floralwhite;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 252, 252);
+  background: radial-gradient(
+    circle,
+    rgba(0, 252, 252, 0.5) 10%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  /* backdrop-filter: blur(2px); */
+  filter: drop-shadow(10px 10px 5px rgba(0, 252, 252, 0.5));
+}
+
+.card .holo {
+  position: absolute;
+  bottom: 0;
+}
+
+.holo {
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 5px;
+  margin: -5px auto 0;
+  background-color: rgba(0, 252, 252, 0.35);
+  border-radius: 100%;
+  filter: blur(2.5px);
+  transform: perspective(100px) rotateX(-30deg);
+  transform-style: preserve-3d;
+  -webkit-animation: holographic 1.5s infinite alternate;
+  animation: holographic 1.5s infinite alternate;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.holo:after {
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  content: "";
+  height: 10px;
+  background-color: rgba(0, 252, 252, 0.5);
+  border-radius: 100%;
+  filter: blur(2.5px);
+}
+
+.holo + .holo {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  opacity: 0.5;
+}
+
+@-webkit-keyframes float {
+  from {
+    will-change: unset;
+    transform: translateY(-100px);
+  }
+  to {
+    will-change: transform;
+    transform: translateY(-80px);
+  }
+}
+
+@keyframes float {
+  from {
+    will-change: unset;
+    transform: translateY(-100px);
+  }
+  to {
+    will-change: transform;
+    transform: translateY(-80px);
+  }
+}
+
+@-webkit-keyframes holographic {
+  from {
+    will-change: box-shadow;
+    box-shadow: 0 -75px 5px rgba(0, 252, 252, 0.15),
+      0 -1px 2px rgba(0, 252, 252, 0.5), 0 -45px 5px rgba(0, 252, 252, 0.15),
+      0 -2px 3px rgba(0, 252, 252, 0.5), 0 -3px 4px rgba(0, 252, 252, 0.5),
+      0 -4px 6px rgba(0, 252, 252, 0.5), 0 -5px 10px rgba(0, 252, 252, 0.75),
+      0 -7px 20px rgba(0, 252, 252, 0.75), 0 -10px 30px rgba(0, 252, 252, 0.75),
+      0 -15px 40px rgba(0, 252, 252, 0.75), 0 -25px 50px rgba(0, 252, 252, 0.75),
+      0 -35px 60px rgba(0, 252, 252, 0.85), 0 -45px 70px rgba(0, 252, 252, 0.95),
+      0 -65px 80px #00fcfc, 0 -75px 90px #00fcfc;
+  }
+  to {
+    will-change: unset;
+    box-shadow: 0 -1px 5px rgba(0, 252, 252, 0.15),
+      0 -1px 2px rgba(0, 252, 252, 0.5), 0 -1px 5px rgba(0, 252, 252, 0.15),
+      0 -2px 3px rgba(0, 252, 252, 0.5), 0 -3px 4px rgba(0, 252, 252, 0.5),
+      0 -4px 6px rgba(0, 252, 252, 0.5), 0 -5px 7px rgba(0, 252, 252, 0.75),
+      0 -7px 10px rgba(0, 252, 252, 0.75), 0 -10px 15px rgba(0, 252, 252, 0.75),
+      0 -15px 20px rgba(0, 252, 252, 0.75), 0 -25px 25px rgba(0, 252, 252, 0.75),
+      0 -35px 30px rgba(0, 252, 252, 0.85), 0 -45px 35px rgba(0, 252, 252, 0.95),
+      0 -65px 40px #00fcfc, 0 -75px 50px #00fcfc;
+  }
+}
+
+@keyframes holographic {
+  from {
+    will-change: box-shadow;
+    box-shadow: 0 -75px 5px rgba(0, 252, 252, 0.15),
+      0 -1px 2px rgba(0, 252, 252, 0.5), 0 -45px 5px rgba(0, 252, 252, 0.15),
+      0 -2px 3px rgba(0, 252, 252, 0.5), 0 -3px 4px rgba(0, 252, 252, 0.5),
+      0 -4px 6px rgba(0, 252, 252, 0.5), 0 -5px 10px rgba(0, 252, 252, 0.75),
+      0 -7px 20px rgba(0, 252, 252, 0.75), 0 -10px 30px rgba(0, 252, 252, 0.75),
+      0 -15px 40px rgba(0, 252, 252, 0.75), 0 -25px 50px rgba(0, 252, 252, 0.75),
+      0 -35px 60px rgba(0, 252, 252, 0.85), 0 -45px 70px rgba(0, 252, 252, 0.95),
+      0 -65px 80px #00fcfc, 0 -75px 90px #00fcfc;
+  }
+  to {
+    will-change: unset;
+    box-shadow: 0 -1px 5px rgba(0, 252, 252, 0.15),
+      0 -1px 2px rgba(0, 252, 252, 0.5), 0 -1px 5px rgba(0, 252, 252, 0.15),
+      0 -2px 3px rgba(0, 252, 252, 0.5), 0 -3px 4px rgba(0, 252, 252, 0.5),
+      0 -4px 6px rgba(0, 252, 252, 0.5), 0 -5px 7px rgba(0, 252, 252, 0.75),
+      0 -7px 10px rgba(0, 252, 252, 0.75), 0 -10px 15px rgba(0, 252, 252, 0.75),
+      0 -15px 20px rgba(0, 252, 252, 0.75), 0 -25px 25px rgba(0, 252, 252, 0.75),
+      0 -35px 30px rgba(0, 252, 252, 0.85), 0 -45px 35px rgba(0, 252, 252, 0.95),
+      0 -65px 40px #00fcfc, 0 -75px 50px #00fcfc;
+  }
+}
+
+/* ##################################### CARDCONTAINER ##################################### */
+
+.cardContainer {
+  margin: 1% 5%;
+}
+
+/* ##################################### ABOUTSECTION ##################################### */
+
+.aboutSection {
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  width: 100%;
+}
+
+.aboutImg {
+  max-width: 400px;
+}
+
+.aboutImg img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.aboutTxt {
+  margin: 0 2%;
+  text-align: justify;
+  /* max-width: 800px;
+  max-height: 700px;
+  overflow-y: scroll; */
+}
+
+.aboutTxt h1 {
+  margin: 2%;
+}
+
+/* ######################################### FOOTER ######################################### */
+
+.footerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.holoDevice {
+  background-image: url(../img/mainRobot.png);
+  background-size: cover;
+  opacity: 90%;
+  width: 300px;
+  height: 150px;
+  transform: translateX(5px);
+  filter: drop-shadow(3px 3px 5px rgba(0, 252, 252, 0.5));
+}
