@@ -59,6 +59,107 @@
   }
 }
 
+.symbole {
+  position: fixed;
+  float: left;
+  margin: 16px 36px;
+  color: floralwhite;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.texte {
+  margin: 4vh auto;
+  width: 85%;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+nav.scroll ul {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.hamburg {
+  display: none;
+}
+
+/* RESPONSIVE HEADER */
+
+@media (max-width: 1026px) {
+  .hamburg {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+
+  .hamenu {
+    background: rgba(0, 0, 0, 0.95);
+    border: none;
+    width: 100%;
+    text-align: right;
+  }
+
+  .line {
+    fill: none;
+    stroke: floralwhite;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+  }
+
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+
+  .symbole {
+    position: fixed;
+    top: 0;
+    margin: 0 5%;
+  }
+
+  nav ul {
+    max-height: 0;
+    background: rgba(0, 0, 0, 0.95);
+  }
+
+  .menu {
+    max-height: 20em;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 24px 0;
+  }
+}
 /* ######################################### CONTAINER ######################################### */
 
 .containerSection {
@@ -69,11 +170,11 @@
   height: 95vh;
   overflow: hidden;
 }
-
 /* ######################################### HOLO ######################################### */
 
 .card {
   position: relative;
+  overflow: hidden;
   -webkit-animation: float 1.5s infinite alternate;
   animation: float 1.5s infinite alternate;
   border-radius: 20px;
@@ -211,6 +312,12 @@
 
 .cardContainer {
   margin: 1% 5%;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.cardContainer::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 /* ##################################### ABOUTSECTION ##################################### */
@@ -244,7 +351,7 @@
   border-radius: 20px;
   width: 90%;
   height: 90%;
-  margin-left: 5vw;
+  margin-left: 5%;
   text-align: center;
 }
 
