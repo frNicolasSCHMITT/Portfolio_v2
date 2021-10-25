@@ -32,3 +32,31 @@ for (let i = 0; i < button.length; i++) {
     xhr_object.send(null);
   });
 }
+
+// Menu on burger click
+
+const menu = document.querySelector(".menu");
+const hamburger = document.querySelector(".hamburg");
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    menu.style.display = "none";
+  } else {
+    menu.classList.add("showMenu");
+    menu.style.display = "block";
+  }
+}
+
+hamburger.addEventListener("click", toggleMenu);
+
+// $(document).ready(function () {
+//   $(".hamburg").on("click", function () {
+//     $("nav ul").toggleClass("menu");
+//   });
+// });
+
+// $(".navLink").click(function () {
+//   $(".active").removeClass("active");
+//   $(this).addClass("active");
+// });
