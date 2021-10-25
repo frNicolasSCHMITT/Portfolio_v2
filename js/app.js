@@ -37,6 +37,8 @@ for (let i = 0; i < button.length; i++) {
 
 const menu = document.querySelector(".menu");
 const hamburger = document.querySelector(".hamburg");
+const menuItems = document.querySelectorAll(".navButton");
+const burgerAnim = document.querySelectorAll(".hamenu");
 
 function toggleMenu() {
   if (menu.classList.contains("showMenu")) {
@@ -48,15 +50,12 @@ function toggleMenu() {
   }
 }
 
+// function resetAnim() {
+//   burgerAnim.classList.toggle("opened");
+// }
+
 hamburger.addEventListener("click", toggleMenu);
 
-// $(document).ready(function () {
-//   $(".hamburg").on("click", function () {
-//     $("nav ul").toggleClass("menu");
-//   });
-// });
-
-// $(".navLink").click(function () {
-//   $(".active").removeClass("active");
-//   $(this).addClass("active");
-// });
+menuItems.forEach(function (menuItem) {
+  menuItem.addEventListener("click", toggleMenu);
+});

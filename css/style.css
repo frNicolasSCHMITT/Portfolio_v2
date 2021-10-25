@@ -13,7 +13,12 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  overflow: hidden;
+  /* overflow: hidden; */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.fullBody::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .glow {
@@ -95,7 +100,7 @@ nav.scroll ul {
     text-align: center;
     margin: 0;
     transition: 1s;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   nav ul li {
@@ -181,11 +186,6 @@ nav.scroll ul {
     padding: 24px 0;
   }
 
-  /* .navList {
-    display: flex;
-    justify-content: space-evenly;
-  } */
-
   .redNeon {
     animation: none;
     font-size: 1em;
@@ -208,13 +208,22 @@ nav.scroll ul {
   align-items: center;
   justify-content: center;
   height: 95vh;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+@media (max-width: 1026px) {
+  .containerSection {
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    position: absolute;
+    bottom: 0;
+  }
 }
 /* ######################################### HOLO ######################################### */
 
 .card {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   -webkit-animation: float 1.5s infinite alternate;
   animation: float 1.5s infinite alternate;
   border-radius: 20px;
@@ -348,18 +357,24 @@ nav.scroll ul {
   }
 }
 
+@media (max-width: 1026px) {
+  .card {
+    position: unset;
+    -webkit-animation: none;
+    animation: none;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 /* ##################################### CARDCONTAINER ##################################### */
 
 .cardContainer {
+  height: 90%;
+  width: 100%;
   margin: 1% 5%;
   overflow-y: scroll;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
 }
-.cardContainer::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
-
 /* ##################################### ABOUTSECTION ##################################### */
 
 .aboutSection {
@@ -384,6 +399,18 @@ nav.scroll ul {
 
 .aboutTxt h1 {
   margin: 2%;
+}
+
+@media (max-width: 1026px) {
+  .aboutSection {
+    flex-direction: column;
+  }
+  .aboutTxt {
+    font-size: 0.7em;
+  }
+  .aboutTxt h1 {
+    font-size: 1.5em;
+  }
 }
 
 /* ######################################### SKILLS SECTION ######################################### */
@@ -553,7 +580,6 @@ nav.scroll ul {
     flex-direction: column;
     height: 90%;
     width: 90%;
-    overflow-y: scroll;
   }
 
   .skillBarsSection {
@@ -596,4 +622,10 @@ nav.scroll ul {
   height: 150px;
   transform: translateX(5px);
   filter: drop-shadow(3px 3px 5px rgba(0, 252, 252, 0.5));
+}
+
+@media (max-width: 1026px) {
+  .holoDevice {
+    display: none;
+  }
 }
