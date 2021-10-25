@@ -2,7 +2,7 @@
         <h1>Certaines de mes réalisations:</h1>
         <div class="worksGrid">
           <div class="workElement">
-            <img src="./media/img/GigaChad.png" alt="" />
+            <img src="./img/GigaChad.png" alt="" />
             <a href="">
               <div class="workElementTxt hide" title="click pour visiter">
                 <h2>Nom du site</h2>
