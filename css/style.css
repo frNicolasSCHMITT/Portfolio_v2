@@ -13,12 +13,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* overflow: hidden; */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
-}
-.fullBody::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  overflow: hidden;
 }
 
 .glow {
@@ -101,6 +96,11 @@ nav.scroll ul {
     margin: 0;
     transition: 1s;
     /* overflow: hidden; */
+  }
+
+  .navList {
+    flex-direction: column;
+    justify-content: center;
   }
 
   nav ul li {
@@ -374,7 +374,13 @@ nav.scroll ul {
   width: 100%;
   margin: 1% 5%;
   overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
+.cardContainer::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 /* ##################################### ABOUTSECTION ##################################### */
 
 .aboutSection {
@@ -603,6 +609,243 @@ nav.scroll ul {
     font-size: 1em;
   }
 }
+
+/* ######################################### WORKS SECTION ######################################### */
+
+/* WORKS PAGE */
+
+.worksSection {
+  height: 100%;
+  text-align: center;
+  overflow-y: scroll;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.worksSection h1 {
+  font-size: 1em;
+  padding: 1%;
+}
+
+.worksGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+}
+
+.workElement {
+  position: relative;
+  height: 99%;
+  width: 99%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+}
+
+.workElement a {
+  color: floralwhite;
+}
+
+.workElement img {
+  width: 100%;
+  height: 100%;
+  background: floralwhite;
+  border-radius: 20px;
+}
+
+.workElementTxt {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0px 20px 20px 0px;
+  padding: 1%;
+  text-align: justify;
+  font-size: 0.7em;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  /* for chrome and safari*/
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: slidein;
+
+  /*for firefox*/
+  -moz-animation-duration: 1s;
+  -moz-animation-name: slidein;
+
+  /* for opera*/
+  -o-animation-duration: 1s;
+  -o-animation-name: slidein;
+
+  /* Standard syntax*/
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    height: 0%;
+    overflow: hidden;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+@-moz-keyframes slidein {
+  from {
+    height: 0%;
+    overflow: hidden;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+@-o-keyframes slidein {
+  from {
+    height: 0%;
+    overflow: hidden;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    height: 0%;
+    overflow: hidden;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+.workElementTxt h2 {
+  margin: 5%;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.workElementTxt h2:hover {
+  color: #ff1177;
+}
+
+.workElement p,
+.workElement h2 {
+  /* for chrome and safari*/
+  -webkit-animation-duration: 4s;
+  -webkit-animation-name: fadein;
+
+  /*for firefox*/
+  -moz-animation-duration: 4s;
+  -moz-animation-name: fadein;
+
+  /* for opera*/
+  -o-animation-duration: 4s;
+  -o-animation-name: fadein;
+
+  /* Standard syntax*/
+  animation-duration: 4s;
+  animation-name: fadein;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.workElement:hover .workElementTxt {
+  display: block;
+}
+
+.infoTxt {
+  display: none;
+  padding: 5%;
+  color: #ff1177;
+}
+
+/* RESPONSIVE WORKS PAGE */
+
+@media (max-width: 1026px) {
+  .worksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workElement {
+    width: 98%;
+    height: 98%;
+    margin: 1% 1%;
+  }
+
+  .workElementTxt {
+    font-size: 0.7em;
+    overflow-y: scroll;
+  }
+
+  .infoTxt {
+    display: unset;
+  }
+}
+
+@media (max-width: 513px) {
+  .worksGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .workElement {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+  }
+}
+
+/* ######################################### CONTACT ######################################### */
 
 /* ######################################### FOOTER ######################################### */
 
