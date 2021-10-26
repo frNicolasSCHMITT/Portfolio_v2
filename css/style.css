@@ -646,6 +646,11 @@ nav.scroll ul {
   overflow-y: scroll;
   border-radius: 20px;
   width: 100%;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.worksSection::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .worksSection h1 {
@@ -852,6 +857,11 @@ nav.scroll ul {
   .workElementTxt {
     font-size: 0.7em;
     overflow-y: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .workElementTxt::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 
   .infoTxt {
@@ -876,6 +886,252 @@ nav.scroll ul {
 }
 
 /* ######################################### CONTACT ######################################### */
+
+.contactSectionBg {
+  text-align: center;
+  overflow-y: scroll;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.contactSectionBg::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.contactSectionBg h1 {
+  font-size: 2em;
+  margin-top: 1%;
+}
+
+.contactSection {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.formSection {
+  width: 45%;
+  height: 100%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.formGroup {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+}
+
+.inputGroup {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.formLabel {
+  position: absolute;
+  left: 0;
+  font-size: 0.7em;
+  font-weight: bold;
+  width: 30%;
+}
+
+.formInput {
+  position: absolute;
+  right: 0;
+  padding: 1% 2%;
+  border-radius: 20px;
+  text-shadow: none;
+  color: #000;
+  width: 70%;
+}
+
+.formMsg {
+  resize: vertical;
+  max-height: 220px;
+  z-index: 2;
+}
+
+.btnDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  /* height: 200px; */
+  width: 100%;
+}
+
+.formBtn {
+  z-index: 3;
+  padding: 1% 2%;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1em;
+  background: #ff1177;
+  color: floralwhite;
+  border: floralwhite solid 5px;
+  cursor: pointer;
+}
+
+.formBtn:hover {
+  background: floralwhite;
+  border: #ff1177 solid 5px;
+  color: #ff1177;
+  text-shadow: none;
+  text-decoration: underline;
+}
+
+.contactMap {
+  width: 40%;
+  height: 80%;
+  margin-left: 5%;
+}
+
+.contactMap iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* RESPONSIVE CONTACT */
+
+@media (max-width: 1026px) {
+  .contactSection {
+    flex-direction: column;
+  }
+  .formSection {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+  }
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .formLabel {
+    width: 100%;
+    position: unset;
+    margin-bottom: 1%;
+  }
+  .formInput {
+    width: 100%;
+    position: unset;
+  }
+  .formBtn {
+    margin-top: 50px;
+  }
+  .contactMap {
+    width: 90%;
+    height: 100%;
+    margin: 2% auto;
+  }
+  .msgGroup {
+    margin-top: 4%;
+  }
+}
+
+@media (max-width: 513px) {
+  .contactSectionBg h1 {
+    font-size: 1em;
+  }
+}
+
+/* CONTACT ANIMS */
+
+.arrow {
+  transform: translate(-50%, -50%);
+}
+
+.arrow span {
+  z-index: 1;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #ff1177;
+  border-right: 5px solid #ff1177;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
+@media (max-width: 1026px) {
+  .arrow {
+    display: none;
+  }
+}
+
+/* THANKS PAGE */
+
+.thanksDiv {
+  text-align: center;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  height: 80%;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.thanksDiv::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.thanksDiv h2 {
+  font-size: 2em;
+  margin: 5% 0;
+}
+
+.thanksDiv p {
+  font-size: 1em;
+  margin: 2% 0;
+  font-style: italic;
+}
+
+.thanksDiv img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.thxFR,
+.thxEN {
+  display: flex;
+}
 
 /* ######################################### FOOTER ######################################### */
 

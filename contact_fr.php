@@ -51,12 +51,12 @@
                 ></textarea>
               </div>
             </div>
-            <div class="arrow">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
             <div class="btnDiv">
+              <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
               <button id="formBtn" class="formBtn" type="submit">Envoyer</button>
             </div>
           </form>
