@@ -19,7 +19,7 @@ for (let i = 0; i < button.length; i++) {
   button[i].addEventListener("click", function () {
     console.log("button" + button);
     target = button[i].getAttribute("data-target");
-    console.log("target" + target);
+    // console.log("target" + target);
     xhr_object = new XMLHttpRequest();
     xhr_object.open("GET", target, true);
     xhr_object.onreadystatechange = function () {

@@ -381,7 +381,7 @@ nav.scroll ul {
   display: none; /* Safari and Chrome */
 }
 
-/* ##################################### ABOUTSECTION ##################################### */
+/* ##################################### ABOUT SECTION ##################################### */
 
 .aboutSection {
   display: flex;
@@ -390,7 +390,7 @@ nav.scroll ul {
 }
 
 .aboutImg {
-  max-width: 400px;
+  width: 40%;
 }
 
 .aboutImg img {
@@ -399,6 +399,7 @@ nav.scroll ul {
 }
 
 .aboutTxt {
+  width: 50%;
   margin: 0 2%;
   text-align: justify;
 }
@@ -411,11 +412,27 @@ nav.scroll ul {
   .aboutSection {
     flex-direction: column;
   }
+  .aboutImg {
+    width: 60%;
+  }
   .aboutTxt {
+    width: 80%;
     font-size: 0.7em;
   }
   .aboutTxt h1 {
     font-size: 1.5em;
+  }
+}
+@media (max-width: 513px) {
+  .aboutImg {
+    width: 90%;
+  }
+  .aboutTxt {
+    width: 100%;
+    font-size: 0.7em;
+  }
+  .aboutTxt h1 {
+    font-size: 1.2em;
   }
 }
 
@@ -458,7 +475,6 @@ nav.scroll ul {
 }
 
 .skillGroup {
-  margin: 1%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -610,6 +626,16 @@ nav.scroll ul {
   }
 }
 
+@media (max-width: 513px) {
+  .skillsSection h1 {
+    font-size: 1em;
+  }
+
+  .skillsSection h2 {
+    font-size: 0.7em;
+  }
+}
+
 /* ######################################### WORKS SECTION ######################################### */
 
 /* WORKS PAGE */
@@ -629,7 +655,7 @@ nav.scroll ul {
 
 .worksGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   width: 100%;
   height: 100%;
 }
@@ -658,7 +684,7 @@ nav.scroll ul {
   border-radius: 0px 20px 20px 0px;
   padding: 1%;
   text-align: justify;
-  font-size: 0.7em;
+  font-size: 1em;
   display: none;
   position: absolute;
   top: 0;
@@ -814,7 +840,7 @@ nav.scroll ul {
 
 @media (max-width: 1026px) {
   .worksGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .workElement {
@@ -834,14 +860,18 @@ nav.scroll ul {
 }
 
 @media (max-width: 513px) {
-  .worksGrid {
+  /* .worksGrid {
     grid-template-columns: repeat(1, 1fr);
-  }
+  } */
 
   .workElement {
     width: 90%;
     height: 90%;
     margin: 5%;
+  }
+
+  .workElementTxt {
+    font-size: 0.5em;
   }
 }
 
